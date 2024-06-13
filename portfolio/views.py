@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    context = {
+        "title": "Variety V1.0"
+    }
+    return render(request, 'portfolio/home_page.html', context)

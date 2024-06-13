@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+	</head>
+	<body>
+
+		<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <img src="{% static "img\electricity.png" %}" alt="basic_logo">
+                </a>
+            </div>
+
+            <div class="navbar-menu is-active">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url "home_page" %}">
+                        Home
+                    </a>
+                </div>
+                
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>All rights reserved. Copyrighted 2024.</p>
+                <p>Created by Franco Aguilar</p>
+            </div>
+        </footer>       
+
+  	</body>
+</html>
