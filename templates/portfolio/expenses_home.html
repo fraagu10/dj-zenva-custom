@@ -4,26 +4,38 @@
 
 <section class="section">
     <div class="container">
-        <header class="title">
-            {{ title }}
-        </header>
+        
+        <h2>Expense Logs</h2>
+        <div>
+            {% for log in all_logs %}
+            <p>{{ log }}</p>
+            {% endfor %}
+            
+        </div>
 
-            <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Amount</th>
-                        <th>Date Added</th>
-                    </tr>
-                </thead>
-                {% for expense in expenses %}
-                <tbody>
-                    <td>{{ expense.description }}</td>
-                    <td>{{ expense.amount }}</td>
-                    <td>{{ expense.published_at }}</td>
-                </tbody>
-                {% endfor %}
-            </table>
+        <hr><hr>
+        
+        <h2>{{ title }}</h2>
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date Added</th>
+                    <th>Type</th>
+                    <th>Expense Log</th>
+                </tr>
+            </thead>
+            {% for expense in expenses %}
+            <tbody>
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.published_at }}</td>
+                <td>{{ expense.type }}</td>
+                <td>{{ expense.expense_log }}</td>
+            </tbody>
+            {% endfor %}
+        </table>
 
     </div>
 </section>

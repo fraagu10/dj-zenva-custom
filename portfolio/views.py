@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ExpenseItem
+from .models import ExpenseItem, ExpenseLog
 
 def index(request):
     context = {
@@ -14,9 +14,11 @@ def about(request):
 
 def expenses_home(request):
     current_expenses = ExpenseItem.objects.all()
+    all_logs = ExpenseLog.objects.all()
     context = {
-        "title":"Current Expenses",
-        "expenses":current_expenses
+        "title": "Current Expenses",
+        "expenses": current_expenses,
+        "all_logs": all_logs,
     }
 
     return render(request, 'portfolio/expenses_home.html', context)
